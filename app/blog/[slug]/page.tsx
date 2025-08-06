@@ -16,10 +16,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // Helper: get absolute base URL
-const baseUrl =
-  process.env.VERCEL_URL && process.env.VERCEL_URL.startsWith("http")
-    ? process.env.VERCEL_URL
-    : `https://${process.env.VERCEL_URL || "localhost:3000"}`;
+const baseUrl = process.env.VERCEL_URL;
+console.log("Base URL:", baseUrl);
 // Fetch blog post by slug
 async function getBlogPost(slug: string) {
   try {
@@ -316,7 +314,7 @@ export default async function BlogPostPage({
                   >
                     <div className="relative overflow-hidden">
                       <Image
-                        src={`/placeholder.svg?height=200&width=400&query=${relatedPost.image}`}
+                        src={relatedPost.image}
                         alt={relatedPost.title}
                         width={400}
                         height={200}
@@ -390,6 +388,8 @@ export default async function BlogPostPage({
                 Speak with Expert
               </Button>
             </Link>
+            <br />
+            <small>{baseUrl}</small>
           </div>
         </div>
       </section>
