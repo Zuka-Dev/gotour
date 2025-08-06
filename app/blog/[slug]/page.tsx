@@ -16,11 +16,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // Helper: get absolute base URL
-// const baseUrl =
-//   process.env.VERCEL_URL && process.env.VERCEL_URL.startsWith("http")
-//     ? process.env.VERCEL_URL
-//     : `https://${process.env.VERCEL_URL || "localhost:3000"}`;
-const baseUrl = "http://localhost:3000";
+const baseUrl =
+  process.env.VERCEL_URL && process.env.VERCEL_URL.startsWith("http")
+    ? process.env.VERCEL_URL
+    : `https://${process.env.VERCEL_URL || "localhost:3000"}`;
 // Fetch blog post by slug
 async function getBlogPost(slug: string) {
   try {
