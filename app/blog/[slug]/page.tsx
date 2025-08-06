@@ -16,7 +16,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // Helper: get absolute base URL
-const baseUrl = process.env.VERCEL_URL;
+const baseUrl = process.env.BACKEND_URL;
 console.log("Base URL:", baseUrl);
 // Fetch blog post by slug
 async function getBlogPost(slug: string) {
