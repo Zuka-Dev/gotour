@@ -24,12 +24,11 @@ const blogPosts: BlogPost[] = [
     slug: "ultimate-guide-european-adventure",
     excerpt:
       "Discover the secrets to planning an unforgettable European vacation, from choosing the perfect itinerary to finding hidden gems off the beaten path.",
-    content: `
-# Ultimate Guide to Planning Your First European Adventure
+    content: `**Ultimate Guide to Planning Your First European Adventure**
 
 Planning your first trip to Europe can feel overwhelming with so many incredible destinations to choose from. This comprehensive guide will help you create the perfect European adventure that matches your interests, budget, and timeline.
 
-## Choosing Your Destinations
+**Choosing Your Destinations**
 
 Europe offers an incredible diversity of experiences, from the romantic canals of Venice to the vibrant nightlife of Berlin. Here's how to narrow down your choices:
 
@@ -46,66 +45,66 @@ Europe offers an incredible diversity of experiences, from the romantic canals o
 
 ## Best Time to Visit
 
-### Peak Season (June-August)
+### **Peak Season (June-August)**
 - **Pros**: Best weather, longest days, all attractions open
 - **Cons**: Crowds, higher prices, hot temperatures in southern Europe
 
-### Shoulder Season (April-May, September-October)
+**Shoulder Season (April-May, September-October)**
 - **Pros**: Pleasant weather, fewer crowds, moderate prices
 - **Cons**: Some attractions may have limited hours
 
-### Off Season (November-March)
+**Off Season (November-March)**
 - **Pros**: Lowest prices, authentic local experience, Christmas markets
 - **Cons**: Cold weather, shorter days, some attractions closed
 
-## Transportation Options
+## **Transportation Options**
 
-### Eurail Pass
+### **Eurail Pass**
 Perfect for covering multiple countries efficiently. Choose from:
 - **Global Pass**: 33 countries, flexible duration
 - **Select Pass**: 2-4 neighboring countries
 - **One Country Pass**: Unlimited travel within one country
 
-### Budget Airlines
+**Budget Airlines**
 - Ryanair, EasyJet, Wizz Air offer cheap flights between cities
 - Book early for best prices
 - Factor in airport transfer costs and time
 
-### Rental Car
+### **Rental Car**
 - Best for countryside exploration
 - Consider automatic vs manual transmission
 - International driving permit required
 
-## Accommodation Strategies
+## **Accommodation Strategies**
 
-### Hotels
+### **Hotels**
 - Book directly for best rates and perks
 - Consider location vs price trade-offs
 - Read recent reviews carefully
 
-### Vacation Rentals
+### **Vacation Rentals**
 - Great for longer stays and families
 - Kitchen facilities save money on meals
 - More authentic neighborhood experience
 
-### Hostels
+### **Hostels**
 - Budget-friendly option with social atmosphere
 - Private rooms available in many locations
 - Great for meeting fellow travelers
 
-## Money Matters
+## **Money Matters**
 
-### Budgeting Tips
+### **Budgeting Tips**
 - **Budget travelers**: €50-80 per day
 - **Mid-range**: €80-150 per day  
 - **Luxury**: €150+ per day
 
-### Payment Methods
+### **Payment Methods**
 - Notify banks of travel plans
 - Use cards with no foreign transaction fees
 - Keep some cash for small vendors and tips
 
-## Cultural Etiquette
+## **Cultural Etiquette**
 
 ### General Tips
 - Learn basic greetings in local languages
@@ -113,9 +112,9 @@ Perfect for covering multiple countries efficiently. Choose from:
 - Understand tipping customs (varies by country)
 - Respect local dining times and customs
 
-## Packing Essentials
+## **Packing Essentials**
 
-### Clothing
+### **Clothing**
 - Comfortable walking shoes (broken in!)
 - Layers for changing weather
 - One dressy outfit for nice restaurants
@@ -174,7 +173,8 @@ Your first European adventure should be exciting, not stressful. Start planning 
 
 Remember, this is just the beginning of your European journey. Each trip will teach you something new and inspire your next adventure. Safe travels!
     `,
-    image: "european travel guide with famous landmarks and scenic views",
+    image:
+      "https://images.unsplash.com/photo-1619467416348-6a782839e95f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsaW5nfGVufDB8fDB8fHww",
     author: "Sarah Mitchell",
     date: "2024-01-15",
     readTime: "12 min read",
@@ -190,7 +190,8 @@ Remember, this is just the beginning of your European journey. Each trip will te
     excerpt:
       "Explore lesser-known destinations in Southeast Asia that offer incredible experiences away from the crowds.",
     content: "Full article content for hidden gems in Southeast Asia...",
-    image: "hidden temples and pristine beaches in southeast asia",
+    image:
+      "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3dpc3MlMjBBbHBzfGVufDB8fDB8fHww",
     author: "Emma Chen",
     date: "2024-01-12",
     readTime: "8 min read",
@@ -206,7 +207,8 @@ Remember, this is just the beginning of your European journey. Each trip will te
     excerpt:
       "Learn how to minimize your environmental impact while maximizing your travel experiences.",
     content: "Full article content for sustainable travel...",
-    image: "eco-friendly travel with sustainable tourism practices",
+    image:
+      "https://plus.unsplash.com/premium_photo-1687653079484-12a596ddf7a9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJhdmVsaW5nfGVufDB8fDB8fHww",
     author: "Michael Rodriguez",
     date: "2024-01-10",
     readTime: "6 min read",

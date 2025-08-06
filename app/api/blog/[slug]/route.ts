@@ -174,24 +174,17 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  try {
-    const post = blogPosts.find((p) => p.slug === params.slug && p.published);
+  const post = blogPosts.find((p) => p.slug === params.slug && p.published);
 
-    if (!post) {
-      return NextResponse.json(
-        { success: false, error: "Blog post not found" },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      data: post,
-    });
-  } catch (error) {
+  if (!post) {
     return NextResponse.json(
-      { success: false, error: "Failed to fetch blog post" },
-      { status: 500 }
+      { success: false, error: "Blog post not found" },
+      { status: 404 }
     );
   }
+
+  return NextResponse.json({
+    success: true,
+    data: post,
+  });
 }

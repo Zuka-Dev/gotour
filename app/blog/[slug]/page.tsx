@@ -14,68 +14,58 @@ import { marked } from "marked";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useEffect } from "react";
 
-// This would typically come from your API or database
+// Helper: get absolute base URL
+// const baseUrl =
+//   process.env.VERCEL_URL && process.env.VERCEL_URL.startsWith("http")
+//     ? process.env.VERCEL_URL
+//     : `https://${process.env.VERCEL_URL || "localhost:3000"}`;
+const baseUrl = "http://localhost:3000";
+// Fetch blog post by slug
 async function getBlogPost(slug: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-    const response = await fetch(`${baseUrl}/api/blog?slug=${slug}`, {
+    const res = await fetch(`${baseUrl}/api/blog?slug=${slug}`, {
       cache: "no-store",
     });
 
-    if (!response.ok) return null;
+    if (!res.ok) return null;
 
-    const data = await response.json();
-
-    // FIX: Return the single matching post
-    if (!data.success || !Array.isArray(data.data)) return null;
-    return data.data.find((p) => p.slug === slug) || null;
-  } catch (error) {
-    console.error("Error fetching blog post:", error);
+    const data = await res.json();
+    return data.data.find((p: any) => p.slug === slug) || null;
+  } catch (err) {
+    console.error("Error fetching blog post:", err);
     return null;
   }
 }
 
-// Get related posts
+// Fetch related posts
 async function getRelatedPosts(currentSlug: string, category?: string) {
   try {
-    const response = await fetch(`/api/blog`, {
+    const res = await fetch(`${baseUrl}/api/blog`, {
       cache: "no-store",
     });
 
-    if (!response.ok) {
-      return [];
-    }
+    if (!res.ok) return [];
 
-    const data = await response.json();
-    return data.success
-      ? data.data.filter((post: any) => post.slug !== currentSlug)
-      : [];
-  } catch (error) {
+    const data = await res.json();
+    return data.data.filter((p: any) => p.slug !== currentSlug);
+  } catch (err) {
     return [];
   }
 }
 
 export default async function BlogPostPage({
-  params: paramsPromise,
+  params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await paramsPromise; // ✅ Await the params
+  const { slug } = params;
+
   const post = await getBlogPost(slug);
+  console.log("Fetched post:", post?.image);
+  if (!post) return notFound();
 
-  console.log("Fetching blog post for slug:", slug);
-  console.log("Post data:", post);
-
-  if (!post) {
-    notFound();
-  }
-
-  const relatedPosts = await getRelatedPosts(
-    post.slug,
-    post.category?.toLowerCase().replace(/\s+/g, "-")
-  );
+  const relatedPosts = await getRelatedPosts(slug, post.category);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -83,7 +73,7 @@ export default async function BlogPostPage({
       <section className="relative py-20 bg-gradient-to-r from-slate-800 to-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
-            src={`/placeholder.svg?height=600&width=1200&query=${post.image}`}
+            src={post?.image}
             alt={post.title}
             fill
             className="object-cover"

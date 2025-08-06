@@ -140,7 +140,7 @@ export default function BlogPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-64 lg:h-auto">
                   <Image
-                    src={`/placeholder.svg?height=400&width=600&query=${featuredPost?.image}`}
+                    src={featuredPost?.image}
                     alt={featuredPost?.title}
                     fill
                     className="object-cover"
@@ -208,7 +208,7 @@ export default function BlogPage() {
               >
                 <div className="relative overflow-hidden">
                   <Image
-                    src={`/placeholder.svg?height=250&width=400&query=${post.image}`}
+                    src={post.image}
                     alt={post.title}
                     width={400}
                     height={250}
